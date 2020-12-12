@@ -1,7 +1,8 @@
+import Logo from '../logo.png';
 const Header = () => {
 	return ( 
 		<header>
-			<h2>Expense tracker by Amin</h2>
+			<img src={Logo} alt="Expense Tracker" width="170px" />
 		</header>
 	);
 }

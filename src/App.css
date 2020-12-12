@@ -1,6 +1,66 @@
 .App {
 	text-align: center;
+	border-radius: 30px;
+	background: #585656;
+	box-shadow: 0 0px 7px 1px #585656;
+    color: #fff;
+    padding: 30px;
 }
+
 .container {
-	width: 500px;
+	width: 470px;
+}
+
+.list-group li {
+	cursor: pointer;
+	position: relative;
+	color: #000;
+	text-align: left;
+	padding: 0.4rem 1rem;
+	margin: 4px;
+	border-radius: 5px;
+}
+
+.delete-history {
+	display: none;
+	position: absolute;
+    top: -7px;
+    background: #e03030;
+    border-radius: 50%;
+    line-height: 1;
+    font-size: 16px;
+    padding: 0px 7px 5px 7px;
+    color: #fff;
+    right: -10px;
+}
+
+.list-group li:hover .delete-history {
+	display: block;
+}
+
+.delete-history:hover {
+	color: #fff;
+    background: red;
+	text-decoration: none;
+}
+
+.summary-block {
+	background: #eafefd;
+    color: #585656;
+    border-radius: 10px;
+    padding: 12px 24px;
+}
+
+.add-transaction {
+	color: #fff;
+	border-radius: 10px;
+	background: #6c1ee4;
+    border-color: #6c1ee4;
+}
+
+.add-transaction:hover {
+	color: #fff;
+	background: #6c1ee4;
+    border-color: #6c1ee4;
+    box-shadow: 0 0px 7px 1px #6c1ee4;
 }
