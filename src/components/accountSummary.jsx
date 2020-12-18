@@ -7,14 +7,14 @@ const AccountSummary = () => {
 	let income = 0;
 	let expense = 0;
 
-	transactions.map(transaction => {
+	for (const transaction of transactions) {
 		if(Math.sign(transaction.transactionAmount) === 1) {
 			income += parseFloat(transaction.transactionAmount);
 		}
 		else {
 			expense += parseFloat(transaction.transactionAmount);
 		}
-	});
+	}
 
 	return ( 
 		<div>

@@ -6,9 +6,10 @@ const Balance = () => {
 	const {transactions} = useContext(Context);
 	let balance = 0;
 
-	transactions.map(transaction => {
+
+	for (const transaction of transactions) {
 		balance += parseFloat(transaction.transactionAmount);
-	});
+	}
 
 	return ( 
 		<div className="current-balance mb-3">
