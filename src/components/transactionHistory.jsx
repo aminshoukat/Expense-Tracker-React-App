@@ -1,23 +1,24 @@
+import { useContext } from 'react';
+import { Context } from '../context/globalState';
 const TransactionHistory = () => {
-	return ( 
+
+	const {transactions, deleteTransaction} = useContext(Context);
+
+	if(!transactions.length) return null;
+
+	return (
 		<div className="mb-3">
 			<h3>Transaciton History</h3>
 			<ul className="list-group">
-				<li className="list-group-item">
-					<span className="float-left">History 1</span>
-					<span className="float-right">$100</span>
-					<a href="/" className="delete-history">x</a>
-				</li>
-				<li className="list-group-item">
-					<span className="float-left">History 1</span>
-					<span className="float-right">$100</span>
-					<a href="/" className="delete-history">x</a>
-				</li>
-				<li className="list-group-item">
-					<span className="float-left">History 1</span>
-					<span className="float-right">$100</span>
-					<a href="/" className="delete-history">x</a>
-				</li>
+				{transactions.map((transaction, index) => 
+					<li key={index} className={(Math.sign(transaction.transactionAmount) === 1) ? "list-group-item income" : "list-group-item expense" }>
+						<span className="float-left">{transaction.description}</span>
+						<span className="float-right">
+							{ transaction.transactionAmount >= 0 ? '$'+ transaction.transactionAmount : '-$'+ (-transaction.transactionAmount) }
+						</span>
+						<button className="delete-history" onClick={() => deleteTransaction(transaction)}>x</button>
+					</li>
+				)}
 			</ul>
 		</div>
 	);
